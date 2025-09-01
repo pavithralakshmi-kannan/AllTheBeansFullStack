@@ -1,6 +1,6 @@
-# All The Beans
+# AllTheBeans
 
-Full-stack demo application for managing coffee beans, orders, and the "Bean of the Day".
+Full Stack Code Development for "AllTheBeans” Business
 
 ---
 
