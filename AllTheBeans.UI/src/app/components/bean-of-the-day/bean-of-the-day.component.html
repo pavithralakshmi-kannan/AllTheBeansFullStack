@@ -1,0 +1,26 @@
+<div class="bean-of-the-day" *ngIf="beanOfTheDay; else noBean">
+  <h2>☕ Bean of the Day: {{ beanOfTheDay.name }}</h2>
+
+  <!-- Bean Image -->
+  <div class="bean-image" *ngIf="beanOfTheDay.image">
+    <img [src]="beanOfTheDay.image" [alt]="beanOfTheDay.name">
+  </div>
+
+  <!-- Bean Details -->
+  <div class="bean-details">
+    <p><strong>Country:</strong> {{ beanOfTheDay.country }}</p>
+    <p><strong>Colour:</strong> {{ beanOfTheDay.colour }}</p>
+    <p><strong>Cost:</strong> {{ beanOfTheDay.cost | currency:'GBP' }}</p>
+    <p *ngIf="beanOfTheDay.description">{{ beanOfTheDay.description }}</p>
+  </div>
+</div>
+
+<!-- when no bean -->
+<ng-template #noBean>
+  <div class="bean-of-the-day">
+    <p *ngIf="message; else loading">{{ message }}</p>
+    <ng-template #loading>
+      <p>Loading today's special bean...</p>
+    </ng-template>
+  </div>
+</ng-template>

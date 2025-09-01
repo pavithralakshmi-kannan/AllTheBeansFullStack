@@ -1,0 +1,16 @@
+<div class="app">
+  <header>
+    <h1>All The Beans</h1>
+    <nav>
+      <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+      <a routerLink="/bean-of-the-day" routerLinkActive="active">Bean of the Day</a>
+      <a routerLink="/order" routerLinkActive="active">Order Coffee Beans</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="content-wrapper">
+      <router-outlet></router-outlet>
+    </div>
+  </main>
+</div>

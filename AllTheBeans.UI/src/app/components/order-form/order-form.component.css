@@ -1,0 +1,79 @@
+.order-form {
+  max-width: 400px;
+  margin: 1rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+}
+
+.order-form h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+  text-align: center;
+  color: #333;
+}
+
+.order-form p {
+  margin: 0.5rem 0;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+.order-form input[type="text"],
+.order-form input[type="number"],
+.order-form select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 0.25rem 0 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  background-color: #fafafa;
+  transition: border 0.2s ease, background 0.2s ease;
+}
+
+.order-form input:focus,
+.order-form select:focus {
+  outline: none;
+  border-color: #2b7a0b;
+  background-color: #fff;
+}
+
+.order-form button {
+  width: 100%;
+  padding: 0.75rem;
+  background: #2b7a0b;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.order-form button:hover {
+  background: #256708;
+  transform: translateY(-1px);
+}
+
+.order-form button:active {
+  transform: translateY(0);
+}
+
+.order-form .message {
+  margin-top: 1rem;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.order-form .message.success {
+  color: #2b7a0b;
+}
+
+.order-form .message.error {
+  color: #c0392b;
+}

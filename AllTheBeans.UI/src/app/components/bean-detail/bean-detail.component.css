@@ -1,0 +1,13 @@
+.bean-detail {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.bean-detail h2 {
+  text-align: center;
+  font-size: 2em;
+}
+
+.bean-detail p {
+  font-size: 1.2em;
+}

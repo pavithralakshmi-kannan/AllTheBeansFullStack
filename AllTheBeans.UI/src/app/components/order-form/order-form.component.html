@@ -1,0 +1,36 @@
+<div class="order-form">
+  <h2>Order Bean</h2>
+
+  <!-- Bean Selection Dropdown -->
+  <p><strong>Select Bean:</strong></p>
+  <select [(ngModel)]="selectedBean" name="bean" required>
+    <option [ngValue]="null">-- Choose a bean --</option>
+    <option *ngFor="let bean of beans" [ngValue]="bean">
+      {{ bean.name }} ({{ bean.country }}) - {{ bean.cost | currency:'GBP' }}
+    </option>
+  </select>
+
+  <!-- Show Price of Selected Bean -->
+  <p *ngIf="selectedBean"><strong>Price per unit:</strong> {{ selectedBean.cost | currency:'GBP' }}</p>
+
+  <!-- Customer Name Input -->
+  <p><strong>Name:</strong></p>
+  <input type="text" [(ngModel)]="customerName" name="customerName" placeholder="Enter your name" required />
+
+  <!-- Address Input -->
+  <p><strong>Address:</strong></p>
+  <input type="text" [(ngModel)]="address" name="address" placeholder="Enter your address" required />
+
+  <!-- Quantity Input -->
+  <p><strong>Quantity:</strong></p>
+  <input type="number" [(ngModel)]="quantity" name="quantity" min="1" required />
+
+  <!-- Total Price -->
+  <p><strong>Total:</strong> {{ total | currency:'GBP' }}</p>
+
+  <!-- Error/Success Messages -->
+  <p *ngIf="message" class="message">{{ message }}</p>
+
+  <!-- Submit Button -->
+  <button (click)="placeOrder()">Place Order</button>
+</div>

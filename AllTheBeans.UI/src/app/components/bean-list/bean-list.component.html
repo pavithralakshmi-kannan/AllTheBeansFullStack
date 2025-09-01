@@ -1,0 +1,33 @@
+<div class="bean-list">
+  <h2>Available Beans</h2>
+
+  <!-- Search Bar -->
+  <div class="search-bar">
+    <input
+      type="text"
+      [(ngModel)]="searchTerm"
+      (input)="onSearch()"
+      placeholder="Search by name or country..."
+    />
+  </div>
+
+  <!-- Bean Grid -->
+  <div class="bean-grid">
+    <div
+      class="bean-card"
+      *ngFor="let bean of filteredBeans"
+      (click)="toggleDetails(bean.id)"
+    >
+      <h3>{{ bean.name }}</h3>
+      <p><strong>Country:</strong> {{ bean.country }}</p>
+      <p><strong>Price:</strong> {{ bean.cost | currency:'GBP' }}</p>
+
+      <!-- Collapsible Details -->
+      <div class="bean-details" *ngIf="expandedBeanId === bean.id">
+        <img *ngIf="bean.image" [src]="bean.image" [alt]="bean.name" />
+        <p><strong>Description:</strong> {{ bean.description }}</p>
+        <p><strong>Colour:</strong> {{ bean.colour }}</p>
+      </div>
+    </div>
+  </div>
+</div>
